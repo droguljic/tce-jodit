@@ -8,18 +8,23 @@ module.exports = {
     'tce-jodit': 'src/index.js'
   },
   output: {
-    format: ['cjs', 'es', 'umd', 'umd-min'],
+    format: ['cjs', 'esm', 'umd', 'umd-min'],
     moduleName: 'TceJodit'
   },
   bundleNodeModules: ['rollup-plugin-vue', 'vue-runtime-helpers'],
+  extendConfig(config) {
+    // NOTE: `bili` marks all package dependencies as externals
+    config.externals = [];
+    return config;
+  },
   plugins: {
     vue: true,
     'tailor-ce': true,
     postcss: {
-      extract: 'dist/tce-jodit.css'
+      extract: 'tce-jodit.css'
     },
     babel: {
-      runtimeHelpers: true,
+      babelHelpers: 'runtime',
       sourceMap: true,
       extensions: ['.js', '.vue']
     },

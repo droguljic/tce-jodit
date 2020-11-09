@@ -2,20 +2,39 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var debounce = _interopDefault(require('lodash/debounce'));
+var debounce = require('lodash/debounce');
+var _classCallCheck = require('@babel/runtime/helpers/classCallCheck');
+var _createClass = require('@babel/runtime/helpers/createClass');
+var autoBind = require('auto-bind');
+var _slicedToArray$1 = require('@babel/runtime/helpers/slicedToArray');
+var jodit = require('jodit');
 var joditVue = require('jodit-vue');
-var autoBind = _interopDefault(require('auto-bind'));
-var cloneDeep = _interopDefault(require('lodash/cloneDeep'));
-var keysIn = _interopDefault(require('lodash/keysIn'));
-var uniqueId = _interopDefault(require('lodash/uniqueId'));
-var ace = _interopDefault(require('brace'));
-var beautify = _interopDefault(require('js-beautify/js/src/html'));
+var cloneDeep = require('lodash/cloneDeep');
+var keysIn = require('lodash/keysIn');
+var uniqueId = require('lodash/uniqueId');
+var ace = require('brace');
+var beautify = require('js-beautify/js/src/html');
 require('brace/mode/html');
 require('brace/theme/chrome');
-var scrollparent = _interopDefault(require('scrollparent'));
-var isFunction$3 = _interopDefault(require('lodash/isFunction'));
+var scrollparent = require('scrollparent');
+var _defineProperty = require('@babel/runtime/helpers/defineProperty');
+var isFunction$3 = require('lodash/isFunction');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
+var _classCallCheck__default = /*#__PURE__*/_interopDefaultLegacy(_classCallCheck);
+var _createClass__default = /*#__PURE__*/_interopDefaultLegacy(_createClass);
+var autoBind__default = /*#__PURE__*/_interopDefaultLegacy(autoBind);
+var _slicedToArray__default = /*#__PURE__*/_interopDefaultLegacy(_slicedToArray$1);
+var cloneDeep__default = /*#__PURE__*/_interopDefaultLegacy(cloneDeep);
+var keysIn__default = /*#__PURE__*/_interopDefaultLegacy(keysIn);
+var uniqueId__default = /*#__PURE__*/_interopDefaultLegacy(uniqueId);
+var ace__default = /*#__PURE__*/_interopDefaultLegacy(ace);
+var beautify__default = /*#__PURE__*/_interopDefaultLegacy(beautify);
+var scrollparent__default = /*#__PURE__*/_interopDefaultLegacy(scrollparent);
+var _defineProperty__default = /*#__PURE__*/_interopDefaultLegacy(_defineProperty);
+var isFunction__default = /*#__PURE__*/_interopDefaultLegacy(isFunction$3);
 
 var name = "@extensionengine/tce-jodit";
 var version = "0.0.1";
@@ -28,91 +47,10 @@ var tailor = {
 	}
 };
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-}
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-function _iterableToArrayLimit(arr, i) {
-  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
-    return;
-  }
-
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-
 /** @typedef {import('jodit').IJodit} Jodit */
 
-var AutofocusPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(AutofocusPlugin, null, [{
+var AutofocusPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](AutofocusPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'autofocus';
@@ -120,18 +58,18 @@ function () {
   }]);
 
   function AutofocusPlugin(options) {
-    _classCallCheck(this, AutofocusPlugin);
+    _classCallCheck__default['default'](this, AutofocusPlugin);
 
     options.readyEvent = options.readyEvent || 'joditReady';
     options.cursorStyle = options.cursorStyle || 'auto';
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Jodit} jodit
    */
 
 
-  _createClass(AutofocusPlugin, [{
+  _createClass__default['default'](AutofocusPlugin, [{
     key: "init",
     value: function init(jodit) {
       jodit.editor.style.cursor = this.options.cursorStyle;
@@ -179,10 +117,8 @@ var splitArray = function splitArray(arg) {
 /** @typedef {import('jodit').IJodit} Jodit */
 
 
-var ExternalToolbarPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(ExternalToolbarPlugin, null, [{
+var ExternalToolbarPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](ExternalToolbarPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'external-toolbar';
@@ -190,17 +126,17 @@ function () {
   }]);
 
   function ExternalToolbarPlugin(options) {
-    _classCallCheck(this, ExternalToolbarPlugin);
+    _classCallCheck__default['default'](this, ExternalToolbarPlugin);
 
     options.readyEvent = options.readyEvent || 'joditReady';
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Config} config
    */
 
 
-  _createClass(ExternalToolbarPlugin, [{
+  _createClass__default['default'](ExternalToolbarPlugin, [{
     key: "apply",
     value: function apply(config) {
       config.toolbar = false;
@@ -284,10 +220,8 @@ var find = function find(arr, cb, defVal) {
 /** @typedef {import('jodit').IControlType<Jodit,Button} Control */
 
 
-var FontControlsPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(FontControlsPlugin, null, [{
+var FontControlsPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](FontControlsPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'font-controls';
@@ -295,7 +229,7 @@ function () {
   }]);
 
   function FontControlsPlugin(options) {
-    _classCallCheck(this, FontControlsPlugin);
+    _classCallCheck__default['default'](this, FontControlsPlugin);
 
     options.defaultFontFamily = options.defaultFontFamily || 'Sans Serif';
     options.defaultFontSize = options.defaultFontSize || 16;
@@ -303,14 +237,14 @@ function () {
 
     options.defaultParagraphStyle = options.defaultParagraphStyle || 'Normal';
     options.pickerLabelClass = options.pickerLabelClass || 'picker_label';
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Config} config
    */
 
 
-  _createClass(FontControlsPlugin, [{
+  _createClass__default['default'](FontControlsPlugin, [{
     key: "apply",
     value: function apply(_ref) {
       var controls = _ref.controls;
@@ -348,7 +282,7 @@ function () {
     value: function getLabel(jodit, control, button) {
       var entry = this.getActiveEntry(jodit, control, control.defaultValue);
 
-      var _entry = _slicedToArray(entry, 2),
+      var _entry = _slicedToArray__default['default'](entry, 2),
           key = _entry[1];
 
       var icon = button.createIcon(control.icon, control);
@@ -384,7 +318,7 @@ function () {
             currentFontFamily = _getComputedStyle.fontFamily;
 
         return find(entries, function (_ref2) {
-          var _ref3 = _slicedToArray(_ref2, 1),
+          var _ref3 = _slicedToArray__default['default'](_ref2, 1),
               fontFamily = _ref3[0];
 
           return normalize.fontFamily(fontFamily) === currentFontFamily;
@@ -396,7 +330,7 @@ function () {
             currentFontSize = _getComputedStyle2.fontSize;
 
         return find(entries, function (_ref4) {
-          var _ref5 = _slicedToArray(_ref4, 2),
+          var _ref5 = _slicedToArray__default['default'](_ref4, 2),
               _ = _ref5[0],
               fontSize = _ref5[1];
 
@@ -406,7 +340,7 @@ function () {
 
       if (control.name === JODIT_CONTROL_PARAGRAPH_STYLE) {
         return find(entries, function (_ref6) {
-          var _ref7 = _slicedToArray(_ref6, 2),
+          var _ref7 = _slicedToArray__default['default'](_ref6, 2),
               _ = _ref7[0],
               style = _ref7[1];
 
@@ -522,10 +456,8 @@ var noop = function noop() {};
  */
 
 
-var MdiIconsPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(MdiIconsPlugin, null, [{
+var MdiIconsPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](MdiIconsPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'mdi-icons';
@@ -533,11 +465,11 @@ function () {
   }]);
 
   function MdiIconsPlugin(options) {
-    _classCallCheck(this, MdiIconsPlugin);
+    _classCallCheck__default['default'](this, MdiIconsPlugin);
 
     options.btnResetColorClass = options.btnResetColorClass || 'btn_reset_color';
     options.selectedMarkerClass = options.selectedMarkerClass || 'selected_color_marker';
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {HTMLElement} el
@@ -545,7 +477,7 @@ function () {
    */
 
 
-  _createClass(MdiIconsPlugin, [{
+  _createClass__default['default'](MdiIconsPlugin, [{
     key: "isResetButton",
     value: function isResetButton(el) {
       return el.classList.contains(this.options.btnResetColorClass);
@@ -696,7 +628,7 @@ function () {
         if (selected) _this.changeSelectedMarker(selected);
 
         var _events$getStore$get = events.getStore(picker).get(JODIT_PICKER_SELECTION_EVENTS[0], JODIT_DEFAULT_EVENT_NAMESPACE),
-            _events$getStore$get2 = _slicedToArray(_events$getStore$get, 1),
+            _events$getStore$get2 = _slicedToArray__default['default'](_events$getStore$get, 1),
             eventDesc = _events$getStore$get2[0];
 
         var oldListener = eventDesc && eventDesc.originalCallback;
@@ -826,13 +758,13 @@ function getColorPickers(popup, _ref3) {
   var textColor, backgroundColor, borderColor;
 
   if (defaultTab === 'background') {
-    var _pickers = _slicedToArray(pickers, 3);
+    var _pickers = _slicedToArray__default['default'](pickers, 3);
 
     backgroundColor = _pickers[0];
     textColor = _pickers[1];
     borderColor = _pickers[2];
   } else if (defaultTab === 'color') {
-    var _pickers2 = _slicedToArray(pickers, 3);
+    var _pickers2 = _slicedToArray__default['default'](pickers, 3);
 
     textColor = _pickers2[0];
     backgroundColor = _pickers2[1];
@@ -915,23 +847,21 @@ var splitArray$1 = function splitArray(arg) {
 /** @typedef {import('jodit').IJodit} Jodit */
 
 
-var PluginProxy =
-/*#__PURE__*/
-function () {
+var PluginProxy = /*#__PURE__*/function () {
   /**
    * @param {Object} plugin
    * @param {Jodit} jodit
    */
   function PluginProxy(plugin, jodit) {
-    _classCallCheck(this, PluginProxy);
+    _classCallCheck__default['default'](this, PluginProxy);
 
     this._plugin = plugin;
     this.jodit = jodit;
-    autoBind(this);
+    autoBind__default['default'](this);
     jodit.events.on('afterInit', this.afterInit).on('beforeDestruct', this.beforeDestruct);
   }
 
-  _createClass(PluginProxy, [{
+  _createClass__default['default'](PluginProxy, [{
     key: "afterInit",
     value: function afterInit() {
       if (!isFunction$1(this._plugin.afterInit)) return;
@@ -982,10 +912,18 @@ function extend(Jodit) {
 
       _this.$plugins.set(pluginName, plugin);
 
-      _this.__plugins[uniqueId('plugin_proxy__')] = new PluginProxy(plugin, _this); // Apply plugin on jodit options.
+      _this.__plugins[uniqueId__default['default']('plugin_proxy__')] = new PluginProxy(plugin, _this); // Apply plugin on jodit options.
 
       if (isFunction$1(plugin.apply)) plugin.apply(config, Jodit);
     });
+  };
+
+  var initOptions = Jodit.prototype.initOptions;
+
+  Jodit.prototype.initOptions = function (options) {
+    options = cloneOptions(options); // this.$applyPlugins(options);
+
+    return initOptions.call(this, options);
   };
 
   Object.defineProperty(Jodit.prototype, 'options', {
@@ -1020,22 +958,20 @@ function extend(Jodit) {
 
 function cloneOptions(options) {
   var shared = ['ownerDocument', 'ownerWindow'];
-  return Object.fromEntries(keysIn(options).map(function (key) {
+  return Object.fromEntries(keysIn__default['default'](options).map(function (key) {
     var value = options[key];
     if (shared.includes(key)) return [key, value];
-    return [key, cloneDeep(value)];
+    return [key, cloneDeep__default['default'](value)];
   }));
 }
 
-window.ace = ace;
+window.ace = ace__default['default'];
 /** @typedef {import('jodit/src/Config').Config & import('jodit/src/plugins')} Config */
 
 /** @typedef {import('jodit').IJodit} Jodit */
 
-var SourceEditorPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(SourceEditorPlugin, null, [{
+var SourceEditorPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](SourceEditorPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'source-editor';
@@ -1043,17 +979,17 @@ function () {
   }]);
 
   function SourceEditorPlugin(options) {
-    _classCallCheck(this, SourceEditorPlugin);
+    _classCallCheck__default['default'](this, SourceEditorPlugin);
 
     options.theme = options.theme || 'ace/theme/chrome';
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Config} config
    */
 
 
-  _createClass(SourceEditorPlugin, [{
+  _createClass__default['default'](SourceEditorPlugin, [{
     key: "apply",
     value: function apply(config) {
       config.sourceEditorNativeOptions = config.sourceEditorNativeOptions || {};
@@ -1071,7 +1007,7 @@ function () {
     value: function init(jodit) {
       if (jodit.options.beautifyHTML) {
         // NOTE: Unfortunately jodit gets beautify function from window global. :(
-        window.html_beautify = beautify;
+        window.html_beautify = beautify__default['default'];
       }
 
       jodit.events.on('aceInited', this.onAceEditorReady);
@@ -1103,10 +1039,8 @@ var JODIT_RECALC_POPUP_POSITION_EVENT = 'recalcPositionPopup';
 var JODIT_DEFAULT_EVENT_NAMESPACE$1 = 'JoditEventDefaultNamespace';
 /** @typedef {import('jodit').IJodit} Jodit */
 
-var TablePopupsPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(TablePopupsPlugin, null, [{
+var TablePopupsPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](TablePopupsPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'table-popups';
@@ -1114,16 +1048,16 @@ function () {
   }]);
 
   function TablePopupsPlugin() {
-    _classCallCheck(this, TablePopupsPlugin);
+    _classCallCheck__default['default'](this, TablePopupsPlugin);
 
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Jodit} jodit
    */
 
 
-  _createClass(TablePopupsPlugin, [{
+  _createClass__default['default'](TablePopupsPlugin, [{
     key: "init",
     value: function init(jodit) {
       var self = this;
@@ -1132,7 +1066,7 @@ function () {
       jodit.afterInitHook = function () {
         afterInitHook.apply(this, arguments);
         self.observeTables(jodit);
-        self.scrollContainer = scrollparent(jodit.container);
+        self.scrollContainer = scrollparent__default['default'](jodit.container);
         if (self.scrollContainer) self.addScrollHandler(jodit);
       };
     }
@@ -1159,7 +1093,7 @@ function () {
     key: "addScrollHandler",
     value: function addScrollHandler(jodit) {
       var _jodit$events$getStor = jodit.events.getStore(jodit.events).get(JODIT_RECALC_POPUP_POSITION_EVENT, JODIT_DEFAULT_EVENT_NAMESPACE$1),
-          _jodit$events$getStor2 = _slicedToArray(_jodit$events$getStor, 1),
+          _jodit$events$getStor2 = _slicedToArray__default['default'](_jodit$events$getStor, 1),
           eventDesc = _jodit$events$getStor2[0];
 
       var recalcPopupPosition = eventDesc && eventDesc.originalCallback;
@@ -1298,9 +1232,6 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
     return script;
 }
 
-const isOldIE = typeof navigator !== 'undefined' &&
-    /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
-
 /* script */
 var __vue_script__ = script;
 /* template */
@@ -1339,17 +1270,15 @@ var __vue_is_functional_template__ = false;
 
 /* style inject shadow dom */
 
-var Toolbar = normalizeComponent({
+var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, undefined, undefined);
 
 /** @typedef {import('jodit').IJodit} Jodit */
 
-var ToolbarBuilderPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(ToolbarBuilderPlugin, null, [{
+var ToolbarBuilderPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](ToolbarBuilderPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'toolbar-builder';
@@ -1357,11 +1286,11 @@ function () {
   }]);
 
   function ToolbarBuilderPlugin(options) {
-    _classCallCheck(this, ToolbarBuilderPlugin);
+    _classCallCheck__default['default'](this, ToolbarBuilderPlugin);
 
     options.buttons = options.buttons || [];
     options.separator = options.separator || '|';
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Config} config
@@ -1369,14 +1298,14 @@ function () {
    */
 
 
-  _createClass(ToolbarBuilderPlugin, [{
+  _createClass__default['default'](ToolbarBuilderPlugin, [{
     key: "apply",
     value: function apply(config, Jodit) {
       var _this = this;
 
       var language = config.language || 'en';
-      config.language = uniqueId("".concat(language, "_"));
-      Jodit.lang[config.language] = cloneDeep(Jodit.lang[language]);
+      config.language = uniqueId__default['default']("".concat(language, "_"));
+      Jodit.lang[config.language] = cloneDeep__default['default'](Jodit.lang[language]);
       this.options.language = config.language;
       config.buttons = [];
       this.options.buttons.forEach(function (it) {
@@ -1390,7 +1319,7 @@ function () {
 
       var controls = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
       var buttons = controls.reduce(function (acc, _ref) {
-        var _ref2 = _slicedToArray(_ref, 2),
+        var _ref2 = _slicedToArray__default['default'](_ref, 2),
             name = _ref2[0],
             tooltip = _ref2[1];
 
@@ -1398,7 +1327,7 @@ function () {
         var lang = Jodit.lang[_this2.options.language];
         if (!control) return acc;
         control.tooltip = control.tooltip || tooltip;
-        Object.assign(lang, _defineProperty({}, control.tooltip, tooltip));
+        Object.assign(lang, _defineProperty__default['default']({}, control.tooltip, tooltip));
         Object.assign(control, {
           hotkeys: []
         });
@@ -1437,10 +1366,8 @@ var isToolbarButton = function isToolbarButton(el) {
 /** @typedef {import('jodit').IComponent} Component */
 
 
-var ToolbarPopupsPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(ToolbarPopupsPlugin, null, [{
+var ToolbarPopupsPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](ToolbarPopupsPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'toolbar-popups';
@@ -1448,10 +1375,10 @@ function () {
   }]);
 
   function ToolbarPopupsPlugin(options) {
-    _classCallCheck(this, ToolbarPopupsPlugin);
+    _classCallCheck__default['default'](this, ToolbarPopupsPlugin);
 
     options.popupOpenClass = options.popupOpenClass || 'popup_open';
-    autoBind(this);
+    autoBind__default['default'](this);
     this.popups = new Map();
   }
   /**
@@ -1459,7 +1386,7 @@ function () {
    */
 
 
-  _createClass(ToolbarPopupsPlugin, [{
+  _createClass__default['default'](ToolbarPopupsPlugin, [{
     key: "init",
     value: function init(jodit) {
       jodit.events.on('beforeOpenPopup', this.beforeOpenPopup);
@@ -1489,7 +1416,7 @@ function () {
       };
 
       var _this$jodit$events$ge = this.jodit.events.getStore(popup.target).get(JODIT_POPUP_TRIGGER_EVENTS[0], JODIT_DEFAULT_EVENT_NAMESPACE$2),
-          _this$jodit$events$ge2 = _slicedToArray(_this$jodit$events$ge, 1),
+          _this$jodit$events$ge2 = _slicedToArray__default['default'](_this$jodit$events$ge, 1),
           eventDesc = _this$jodit$events$ge2[0];
 
       var oldListener = eventDesc && eventDesc.originalCallback;
@@ -1531,7 +1458,7 @@ function () {
     key: "createToggleAction",
     value: function createToggleAction(target, listener) {
       var self = this;
-      return Object.assign(togglePopup, _defineProperty({}, toggle, true));
+      return Object.assign(togglePopup, _defineProperty__default['default']({}, toggle, true));
 
       function togglePopup() {
         var popup = self.popups.get(target);
@@ -1569,7 +1496,7 @@ var TOOLTIP_CLASS = 'tce-jodit-tooltip';
 var TOOLTIP_POPUP_FORM = "\n  <form class=\"jodit_form\">\n    <textarea name=\"tooltip\" placeholder=\"Tooltip\"></textarea>\n    <input name=\"text\" type=\"text\" placeholder=\"Text\">\n    <div style=\"text-align: right\">\n      <button name=\"delete\" type=\"button\">Delete</button>\n      <button name=\"submit\" type=\"submit\">Submit</button>\n    </div>\n  </form>";
 
 var isTooltipNode = function isTooltipNode(node) {
-  if (!node || !isFunction$3(node.hasAttribute)) return false;
+  if (!node || !isFunction__default['default'](node.hasAttribute)) return false;
   return node.hasAttribute(TOOLTIP_ATTR);
 };
 /** @typedef {import('jodit').IJodit} Jodit */
@@ -1579,10 +1506,8 @@ var isTooltipNode = function isTooltipNode(node) {
 /** @typedef {import('jodit').IControlType<Jodit,Button} Control */
 
 
-var TooltipPlugin =
-/*#__PURE__*/
-function () {
-  _createClass(TooltipPlugin, null, [{
+var TooltipPlugin = /*#__PURE__*/function () {
+  _createClass__default['default'](TooltipPlugin, null, [{
     key: "pluginName",
     get: function get() {
       return 'tooltip';
@@ -1590,16 +1515,16 @@ function () {
   }]);
 
   function TooltipPlugin() {
-    _classCallCheck(this, TooltipPlugin);
+    _classCallCheck__default['default'](this, TooltipPlugin);
 
-    autoBind(this);
+    autoBind__default['default'](this);
   }
   /**
    * @param {Config} config
    */
 
 
-  _createClass(TooltipPlugin, [{
+  _createClass__default['default'](TooltipPlugin, [{
     key: "apply",
     value: function apply(_ref) {
       var controls = _ref.controls;
@@ -1735,7 +1660,7 @@ function () {
 //
 //       caused by: https://github.com/xdan/jodit/blob/3.2.55/src/modules/helpers/checker/isJoditObject.ts#L18
 
-Object.defineProperty(joditVue.Jodit, 'name', {
+Object.defineProperty(jodit.Jodit, 'name', {
   value: 'Jodit'
 });
 var JODIT_READY_EVENT = 'joditReady';
@@ -1749,19 +1674,19 @@ var joditConfig = {
   disablePlugins: ['fullsize'],
   language: 'en'
 };
-extend(joditVue.Jodit);
+extend(jodit.Jodit);
 var plugins = [{
   use: TooltipPlugin
 }, {
   use: ToolbarBuilderPlugin,
   options: {
-    buttons: Toolbar.$buttons
+    buttons: __vue_component__.$buttons
   }
 }, {
   use: ExternalToolbarPlugin,
   options: {
     readyEvent: JODIT_READY_EVENT,
-    toolbarContainer: Toolbar.$containerId
+    toolbarContainer: __vue_component__.$containerId
   }
 }, {
   use: FontControlsPlugin
@@ -1857,7 +1782,7 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-13b42c81";
+var __vue_scope_id__$1 = "data-v-08c24848";
 /* module identifier */
 
 var __vue_module_identifier__$1 = undefined;
@@ -1870,7 +1795,7 @@ var __vue_is_functional_template__$1 = false;
 
 /* style inject shadow dom */
 
-var JoditEditor = normalizeComponent({
+var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$1,
   staticRenderFns: __vue_staticRenderFns__$1
 }, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, undefined, undefined, undefined);
@@ -1905,18 +1830,18 @@ var script$2 = {
     }
   },
   data: function data(vm) {
-    var _ref, _vm$element, _vm$element$data;
+    var _vm$element$data$cont, _vm$element, _vm$element$data;
 
     return {
-      content: (_ref = (_vm$element = vm.element) === null || _vm$element === void 0 ? void 0 : (_vm$element$data = _vm$element.data) === null || _vm$element$data === void 0 ? void 0 : _vm$element$data.content) !== null && _ref !== void 0 ? _ref : '',
+      content: (_vm$element$data$cont = (_vm$element = vm.element) === null || _vm$element === void 0 ? void 0 : (_vm$element$data = _vm$element.data) === null || _vm$element$data === void 0 ? void 0 : _vm$element$data.content) !== null && _vm$element$data$cont !== void 0 ? _vm$element$data$cont : '',
       readonly: false
     };
   },
   computed: {
     hasChanges: function hasChanges() {
-      var _ref2, _this$element, _this$element$data;
+      var _this$element$data$co, _this$element, _this$element$data;
 
-      var previousValue = (_ref2 = (_this$element = this.element) === null || _this$element === void 0 ? void 0 : (_this$element$data = _this$element.data) === null || _this$element$data === void 0 ? void 0 : _this$element$data.content) !== null && _ref2 !== void 0 ? _ref2 : '';
+      var previousValue = (_this$element$data$co = (_this$element = this.element) === null || _this$element === void 0 ? void 0 : (_this$element$data = _this$element.data) === null || _this$element$data === void 0 ? void 0 : _this$element$data.content) !== null && _this$element$data$co !== void 0 ? _this$element$data$co : '';
       return previousValue !== this.content;
     }
   },
@@ -1935,10 +1860,10 @@ var script$2 = {
       // Make sure that component state is kept
       // until events (i.e. focusout => save) are triggered
       setTimeout(function () {
-        var _ref3, _val$data;
+        var _val$data$content, _val$data;
 
         if (_this.isFocused) return;
-        _this.content = (_ref3 = val === null || val === void 0 ? void 0 : (_val$data = val.data) === null || _val$data === void 0 ? void 0 : _val$data.content) !== null && _ref3 !== void 0 ? _ref3 : '';
+        _this.content = (_val$data$content = val === null || val === void 0 ? void 0 : (_val$data = val.data) === null || _val$data === void 0 ? void 0 : _val$data.content) !== null && _val$data$content !== void 0 ? _val$data$content : '';
       }, 0);
     },
     isFocused: function isFocused(val, oldVal) {
@@ -1951,12 +1876,12 @@ var script$2 = {
         this.readonly = false;
       }
     },
-    content: debounce(function () {
+    content: debounce__default['default'](function () {
       this.save();
     }, 4000)
   },
   components: {
-    JoditEditor: JoditEditor
+    JoditEditor: __vue_component__$1
   }
 };
 
@@ -2023,7 +1948,7 @@ var __vue_staticRenderFns__$2 = [function () {
 var __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-var __vue_scope_id__$2 = "data-v-b17edcb2";
+var __vue_scope_id__$2 = "data-v-7aaaa182";
 /* module identifier */
 
 var __vue_module_identifier__$2 = undefined;
@@ -2036,7 +1961,7 @@ var __vue_is_functional_template__$2 = false;
 
 /* style inject shadow dom */
 
-var Edit = normalizeComponent({
+var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$2,
   staticRenderFns: __vue_staticRenderFns__$2
 }, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, false, undefined, undefined, undefined);
@@ -2046,27 +1971,27 @@ var plugin__default = {
     return {};
   },
   components: {
-    Edit: Edit,
-    Toolbar: Toolbar
+    Edit: __vue_component__$2,
+    Toolbar: __vue_component__
   }
 };
 
 var plugin = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  Edit: Edit,
-  Toolbar: Toolbar,
+  Edit: __vue_component__$2,
+  Toolbar: __vue_component__,
   'default': plugin__default
 });
 
-function _slicedToArray$1(arr, i) {
-  return _arrayWithHoles$1(arr) || _iterableToArrayLimit$1(arr, i) || _nonIterableRest$1();
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
 
-function _arrayWithHoles$1(arr) {
+function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
 
-function _iterableToArrayLimit$1(arr, i) {
+function _iterableToArrayLimit(arr, i) {
   if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
     return;
   }
@@ -2096,7 +2021,7 @@ function _iterableToArrayLimit$1(arr, i) {
   return _arr;
 }
 
-function _nonIterableRest$1() {
+function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
@@ -2231,7 +2156,7 @@ var install = function install(Vue) {
   }
 
   Object.entries(components).forEach(function (_ref) {
-    var _ref2 = _slicedToArray$1(_ref, 2),
+    var _ref2 = _slicedToArray(_ref, 2),
         name$1 = _ref2[0],
         component = _ref2[1];
 
@@ -2241,8 +2166,8 @@ var install = function install(Vue) {
   });
 };
 
-exports.Edit = Edit;
-exports.Toolbar = Toolbar;
+exports.Edit = __vue_component__$2;
+exports.Toolbar = __vue_component__;
 exports.default = install;
 exports.install = install;
 exports.options = options;

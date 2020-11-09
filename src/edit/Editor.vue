@@ -5,15 +5,18 @@
 </template>
 
 <script>
-import { Jodit, JoditVue } from 'jodit-vue';
 import AutofocusPlugin from './plugins/autofocus';
 import ExternalToolbarPlugin from './plugins/external-toolbar';
 import FontControlsPlugin from './plugins/font-controls';
+// NOTE: Remove this after https://github.com/WendellAdriel/jodit-vue/pull/15
+//       gets merged!
+import { Jodit } from 'jodit';
+import { /* Jodit, */ JoditVue } from 'jodit-vue';
 import MdiIconsPlugin from './plugins/mdi-icons';
 import pluginsAdapter from './plugins-adapter';
 import SourceEditorPlugin from './plugins/source-editor';
 import TablePopupsPlugin from './plugins/table-popups';
-import Toolbar from '@/edit/Toolbar';
+import Toolbar from '@/edit/Toolbar.vue';
 import ToolbarBuilderPlugin from './plugins/toolbar-builder';
 import ToolbarPopupsPlugin from './plugins/toolbar-popups';
 import TooltipPlugin from './plugins/tooltip';

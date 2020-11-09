@@ -63,6 +63,13 @@ export default function extend(Jodit) {
     });
   };
 
+  const { initOptions } = Jodit.prototype;
+  Jodit.prototype.initOptions = function (options) {
+    options = cloneOptions(options);
+    // this.$applyPlugins(options);
+    return initOptions.call(this, options);
+  };
+
   Object.defineProperty(Jodit.prototype, 'options', {
     enumerable: true,
     configurable: false,
