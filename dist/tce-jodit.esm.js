@@ -1922,11 +1922,9 @@ var script$2 = {
   methods: {
     save: function save() {
       if (!this.hasChanges) return;
-      var element = this.element,
-          content = this.content;
-      this.$emit('save', Object.assign({}, element.data, {
-        content: content
-      }));
+      this.$emit('save', {
+        content: this.content
+      });
     }
   },
   watch: {
@@ -2024,7 +2022,7 @@ var __vue_staticRenderFns__$2 = [function () {
 var __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-var __vue_scope_id__$2 = "data-v-e0ab2368";
+var __vue_scope_id__$2 = "data-v-b17edcb2";
 /* module identifier */
 
 var __vue_module_identifier__$2 = undefined;
